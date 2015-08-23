@@ -56,32 +56,44 @@
   </div> <!--container-fluid closed-->
 </nav>
 
-<!-- Creates the bootstrap modal where the image will appear -->
-<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-       </div>
-      <div class="modal-body">
-        <img src="car.jpg" id="imagepreview" style="width: 400px; height: 264px;" >
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-
-
-</div><!--.modal fade-->
 
 <!-- side bar fixed-->
 
-<div class="container-fluid"  style="position:fixed;left:-20px;width:230px;z-index:9999" id="side-bar">
+<div class="container-fluid" id="side-bar">
 
-  <div class="row" style="background:black;height:590px;">
+  <div class="row" style="background:grey;height:572px;">
       <ul>
-        <li>
+        <li class="profile-userpic">
+             
+          <img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt="hi">
+        
 
         </li>
 
       </ul>
+
+          <div class="profile-usertitle-name">
+            USERNAME
+          </div>
+      <div class="profile-usermenu">
+          <ul class="nav">
+            <li>
+              <a href="index.html">
+              <i class="glyphicon glyphicon-home"></i>
+              Dashboard</a>
+            </li>
+            <li>
+              <a href="settings.html">
+              <i class="glyphicon glyphicon-user"></i>
+              Profile Settings </a>
+            </li>
+            <li>
+              <a href="report.html">
+              <i class="glyphicon glyphicon-warning-sign"></i>
+              Report </a>
+            </li>
+          </ul>
+        </div>
   </div>
 
 
@@ -100,20 +112,21 @@
     <div class="col-md-10" id="button-panel">
 
         <div class="row ">
-        <div class="col-md-4  col-sm-12 text-center"  >  <a href="index.html"><button type="button" class="btn"  id="button1" ><span class="glyphicon glyphicon-book">&nbsp;NOTES</span></button></a></div>
+        <div class="col-md-4  col-sm-12 text-center"  >  <a href="notes.html"><button type="button" class="btn"  id="button1" ><span class="glyphicon glyphicon-book">&nbsp;NOTES</span></button></a></div>
         <div class="col-md-4  col-sm-12 text-center"  >  <a href="forum.html" ><button type="button" class=" btn  " id="button1" ><span class="glyphicon glyphicon-comment">&nbsp;FORUM</span></button></a></div>
-        <div class="col-md-4 col-sm-12 text-center"  >   <button type="button" class=" btn   " id="button1" ><span class="glyphicon glyphicon-stats">&nbsp;GOOGLE
-          <br>ANALYTICS</span></button></div>
+        <div class="col-md-4 col-sm-12 text-center"  >  <a href="analytics.html"> <button type="button" class=" btn   " id="button1" ><span class="glyphicon glyphicon-stats">&nbsp;GOOGLE
+          <br>ANALYTICS</span></button></a></div>
 
 
         </div>
       <!--start of the second row-->
         <div class="row">
-          <div class="col-md-4 col-sm-12 text-center"  >  <button type="button" class=" btn  " id="button1" ><span class="glyphicon glyphicon-facetime-video">&nbsp;VIDEOS</span></button></div>
+          <div class="col-md-4 col-sm-12 text-center"  > <a href="videos.html"> <button type="button" class=" btn  " id="button1" ><span class="glyphicon glyphicon-facetime-video">&nbsp;VIDEOS</span></button></a></div>
 
-        <div class="col-md-4  col-sm-12 text-center"  >     <button type="button" class="btn  " id="button1" ><span class="glyphicon glyphicon-globe">&nbsp;Groups</span></button></div>
+       
+      <div class="col-md-4  col-sm-12 text-center"  >  <a href="filter.html">   <button type="button" class=" btn  " id="button1" ><span class="glyphicon glyphicon-search">&nbsp;FILTER SEARCH</SPAN></button></a></div>
 
-        <div class="col-md-4 col-sm-12 text-center"  >     <button type="button" class=" btn  " id="button1" >SYLLABUS</button></div>
+        <div class="col-md-4 col-sm-12 text-center"  > <a href="syllabus.html">   <button type="button" class=" btn  " id="button1" ><span class="glyphicon glyphicon-th-list">&nbsp;SYLLABUS</span></button></a></div>
 
 
         </div>
@@ -121,7 +134,7 @@
         <div class="row">
       <div class="col-md-4  col-sm-12 text-center"  >     <button type="button"  class=" btn  " id="button1" ><span class="glyphicon glyphicon-flag">&nbsp;CONTRIBUTION</span></button></div>
 
-      <div class="col-md-4  col-sm-12 text-center"  >     <button type="button" class=" btn  " id="button1" ><span class="glyphicon glyphicon-search">&nbsp;FILTER SEARCH</SPAN></button></div>
+       <div class="col-md-4  col-sm-12 text-center"  > <button type="button" class="btn  " id="button1" ><span class="glyphicon glyphicon-globe">&nbsp;Groups</span></button></div>
 
       <div class="col-md-4  col-sm-12 text-center"  >     <button type="button" class="btn  " id="button1" ><span class="glyphicon glyphicon-road">&nbsp;BRANCH <br>CONTRIBUTION<span></button></div>
         </div>
@@ -176,20 +189,16 @@
   <!--  Scripts-->
   <!-- Menu Toggle Script -->
     <script>
-    $("#justify-icon menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
+      $("#side-button").click(function(){
+       $("#side-bar").animate({
+         width: "toggle"
+     });
+      });
     </script>
 
     <script>
     $(document).ready(function(){
-      $("#side-button").click(function(){
-//$("#side-bar").hide("slide", { direction: "left" }, 1000);
-$("#side-bar").animate({
-         width: "toggle"
-     });
-      });
+      $("#side-bar").hide();
     });
     </script>
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

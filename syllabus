@@ -109,7 +109,7 @@
 
  <!--  Scripts-->
   <!-- Menu Toggle Script -->
-    <script>
+<script>
       $("#side-button").click(function(){
        $("#side-bar").animate({
          width: "toggle"
